@@ -1,0 +1,5 @@
+[docker]
+172.16.210.131  ansible_ssh_user="gonzalo" ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[apache]
+172.16.210.133  ansible_ssh_user="gonzalo" ansible_ssh_common_args='-o StrictHostKeyChecking=no'

@@ -1,0 +1,21 @@
+---
+- hosts: apache
+  become: yes
+  tasks:
+    
+    - name: Instalar Apache
+      yum:
+        name: httpd
+
+    - name: Iniciar servicio Apache
+      systemd:
+        name: httpd
+        state: started
+        enabled: 
+        
+    - name: Habilitar puerto 80 en firewall 
+      firewalld:
+        port: 80/tcp
+        permanent: yes
+        state: enabled
+        immediate: yes

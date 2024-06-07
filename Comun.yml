@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Crear usuario Administrador
+      user:
+        name: administrador
+        group: wheel
+        comment: Usuario Administrador
+        password: $6$qD3E.uRo$CR9FCxSPmGf0O35wb5SyVifIBHnKwN6/K6g6YR7ExBytOszIarutw7s9eVtqKQFeEZjPy8rXD4XKvbCBnfli/.
+
+    - name: Agregar repositorio EPEL 
+      yum:
+        name: epel-release
+
+    - name: Instalar paquetes comunes
+      yum: 
+        name: 
+          - vim 
+          - git 
+          - wget 
