@@ -2,6 +2,7 @@
 - hosts: all
   become: yes
   tasks:
+  
     - name: Crear usuario Administrador
       user:
         name: administrador
